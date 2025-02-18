@@ -166,9 +166,9 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 10";
 #else
-static const char *fonts[]               = { "UbuntuMono:size=14" };
+static const char *fonts[]               = { "FiraCodeNerdFontMono:size=14" };
 #endif // BAR_PANGO_PATCH
-static const char dmenufont[]            = "UbuntuMono:size=14";
+static const char dmenufont[]            = "FiraCodeNerdFontMono:size=14";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
@@ -416,8 +416,6 @@ static const char *const autostart[] = {
     "nitrogen", "--restore", NULL,
     "nm-applet", NULL,
     "blueberry-tray", NULL,
-    "ibus", "exit", NULL,
-    "/home/alexander/git/dwm-flexipatch/dmenu-apps/startup", NULL,
 	NULL /* terminate */
 };
 #endif // COOL_AUTOSTART_PATCH
@@ -514,6 +512,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "gnome-calculator", .isfloating = 1)
+	RULE(.class = "Rhythmbox", .isfloating = 1)
 	RULE(.class = "Gnome-terminal", .isfloating = 1)
 	RULE(.class = "firefox", .tags = 2)
 	RULE(.class = "discord", .tags = 1 << 2)
@@ -523,7 +522,7 @@ static const Rule rules[] = {
 	RULE(.class = "Lutris", .tags = 1 << 3)
 	RULE(.class = "heroic", .tags = 1 << 3)
 	RULE(.class = "Audacious", .tags = 1 << 4)
-	RULE(.class = "Pavucontrol", .tags = 1 << 4)
+	RULE(.class = "pavucontrol", .tags = 1 << 4)
 	RULE(.class = "Blueberry.py", .tags = 1 << 4)
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
